@@ -3,53 +3,45 @@ import java.util.Scanner;
 public class LibraryManagementSystem {
 
     public static void main(String[] args) {
-        // Initialize Scanner for user input
-        Scanner scanner = new Scanner(System.in);
         
-        // Initialize library
+        Scanner sc = new Scanner(System.in);
+        
         Library library = new Library();
-        
-        // Add some books to the library
+  
         library.addBook(new Book("Harry Potter", "J.K. Rowling", "12345", true));
         library.addBook(new Book("Lord of the Rings", "J.R.R. Tolkien", "67890", true));
-        
-        // User input
+
         System.out.println("Welcome to the Library Management System!");
         
-        // Input user details
-        System.out.println("Enter your name: ");
-        String name = scanner.nextLine();
+        for (int i = 0; i < 2; i++){
+            System.out.print("Enter your name: ");
+            String name = sc.nextLine();
         
-        System.out.println("Enter your age: ");
-        int age = scanner.nextInt();
-        scanner.nextLine(); // consume newline
+            System.out.print("Enter your age: ");
+            int age = sc.nextInt();
+            sc.nextLine();
         
-        // Create user and add to library system
-        User user = new User(name, age);
-        library.addUser(user);
+            User user = new User(name, age);
+            library.addUser(user);
 
-        // Display available books
-        System.out.println("\n--- Available Books ---");
-        library.listAvailableBooks();
+            System.out.println("\n--- Available Books ---");
+            library.listAvailableBooks();
         
-        // Borrow a book
-        System.out.print("\nEnter the title of the book you want to borrow: ");
-        String bookTitle = scanner.nextLine();
-        library.borrowBook(user, bookTitle);
+            System.out.print("\nEnter the title of the book you want to borrow: ");
+            String bookTitle = sc.nextLine();
+            library.borrowBook(user, bookTitle);
         
-        // Check borrowed books
-        System.out.println("\n--- Borrowed Books ---");
-        user.printBorrowedBooks();
+            System.out.println("\n--- Borrowed Books ---");
+            user.printBorrowedBooks();
         
-        // Check due dates
-        System.out.println("\n--- Due Dates ---");
-        user.checkDuedates();
+            System.out.println("\n--- Due Dates ---");
+            user.checkDuedates();
         
-        // Check for overdue books
-        System.out.println("\n--- Overdue Books ---");
-        user.checkOverdueBooks();
+            System.out.println("\n--- Overdue Books ---");
+            user.checkOverdueBooks();
+        }
         
-        scanner.close();
+        sc.close();
     }
     
 }
