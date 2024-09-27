@@ -14,7 +14,7 @@ public class LibraryManagementSystem {
         System.out.println("Welcome to the Library Management System!");
         
         for (int i = 0; i < 2; i++){
-            System.out.print("Enter your name: ");
+            System.out.print("\nEnter your name: ");
             String name = sc.nextLine();
         
             System.out.print("Enter your age: ");
